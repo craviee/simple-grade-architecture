@@ -1,5 +1,7 @@
 #include <iostream>
+#include <student.hpp>
 
 int main() {
-    std::cout << "Hello Easy C++ project!" << std::endl;
+    student me(1, "daniel", "craviee@pm.me", "123456");
+    std::cout << me.getName() << std::endl;
 }
