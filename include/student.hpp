@@ -4,6 +4,7 @@
 #include "subject.hpp"
 
 #include <vector>
+#include <stdexcept>
 
 class student: public person {
 
@@ -15,6 +16,6 @@ public:
     std::vector<subject> subjects;
 
 public:
-    void getGrade(subject _subject);
-    void getStatistics(subject _subject);
+    grade getGrade(subject _subject);
+    double getStatistics(subject _subject);
 };

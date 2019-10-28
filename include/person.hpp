@@ -11,7 +11,8 @@ public:
 public:
     void Login() { isConnected = true; };
     void Logout() { isConnected = false; };
-    std::string getName() {return name; };
+    std::string getName() { return name; };
+    unsigned long getId() { return id; };
 
 protected:
     unsigned long id;
