@@ -1,0 +1,6 @@
+language: cpp
+os: linux
+dist: bionic
+install: make
+compiler: g++
+script: ./bin/main.out
