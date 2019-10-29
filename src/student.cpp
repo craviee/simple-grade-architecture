@@ -10,7 +10,7 @@ grade student::getGrade(std::unique_ptr<subject>& _subject)
     {
         for(auto _grade : _subject->grades)
         {
-            if(_grade.studentId == id && _grade.validated)
+            if(_grade.getStudentId() == id && _grade.isValidated())
                 return _grade;
         }
         throw std::logic_error("No grade");
@@ -26,8 +26,8 @@ double student::getStatistics(std::unique_ptr<subject>& _subject)
     if(isConnected)
     {
         for(auto _grade : _subject->grades)
-            if(_grade.validated)
-                mean += _grade.value;
+            if(_grade.isValidated())
+                mean += _grade.getValue();
         return mean/_subject->grades.size();
     }
     else

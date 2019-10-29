@@ -14,9 +14,6 @@ public:
     ~student();
 
 public:
-    std::vector<subject> subjects;
-
-public:
     grade getGrade(std::unique_ptr<subject>& _subject);
     double getStatistics(std::unique_ptr<subject>& _subject);
 };
