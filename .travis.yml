@@ -1,5 +1,5 @@
 language: cpp
 os: linux
 dist: bionic
-install: make get-deps
-compiler: gcc
+install: make
+compiler: g++
