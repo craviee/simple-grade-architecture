@@ -6,18 +6,33 @@ deansoffice::~deansoffice() {}
 
 void deansoffice::addStudent2Subject(subject _subject, student _student)
 {
-    if(!std::any_of(_subject.grades.begin(), _subject.grades.end(), [&](grade g) { return g.studentId == _student.getId(); }))
-        _subject.grades.push_back(_student.getId());
+    if(isConnected)
+    {
+        if(!std::any_of(_subject.grades.begin(), _subject.grades.end(), [&](grade g) { return g.studentId == _student.getId(); }))
+            _subject.grades.push_back(_student.getId());
+    }
+    else
+        throw std::logic_error("Not connected");
 }
 
 void deansoffice::addSubject2Professor(subject _subject, professor _professor)
 {
-    _subject.setProfessorId(_professor.getId());
+    if(isConnected)
+    {
+        _subject.setProfessorId(_professor.getId());
+    }
+    else
+        throw std::logic_error("Not connected");
 }
 
 void deansoffice::validateGrade(subject _subject, student _student)
 {
-    for(grade g : _subject.grades)
-        if(g.studentId == _student.getId())
-            g.validated = true;
+    if(isConnected)
+    {
+        for(grade g : _subject.grades)
+            if(g.studentId == _student.getId())
+                g.validated = true;
+    }
+    else
+        throw std::logic_error("Not connected");
 }
