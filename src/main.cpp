@@ -36,4 +36,6 @@ int main()
 
     daniel->logout();
     marcelo->logout();
+
+    return 0;
 }
