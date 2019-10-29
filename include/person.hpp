@@ -5,12 +5,12 @@
 class person {
 
 public:
-    person(unsigned long _id, std::string _name, std::string _email, std::string _password) : id(_id), name(_name), email(_email), password(_password) { std::cout << "Person constructor" << std::endl;};
+    person(unsigned long _id, std::string _name, std::string _email, std::string _password) : id(_id), name(_name), email(_email), password(_password) { };
     ~person(){};
 
 public:
-    void Login() { isConnected = true; };
-    void Logout() { isConnected = false; };
+    void login() { isConnected = true; };
+    void logout() { isConnected = false; };
     std::string getName() { return name; };
     unsigned long getId() { return id; };
 

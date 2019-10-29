@@ -4,7 +4,7 @@ class grade {
 
 public:
     grade(unsigned long _studentId) : studentId(_studentId) {};
-    ~grade();
+    ~grade() {};
 
 public:
     unsigned long studentId;

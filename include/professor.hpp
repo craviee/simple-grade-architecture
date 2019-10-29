@@ -9,7 +9,7 @@ public:
     ~professor();
 
 public:
-    void updateGrade(subject _subject, student _student, double value);
-    void deleteGrade(subject _subject, student _student);
-    grade getGrade(subject _subject, student _student);
+    void updateGrade(std::unique_ptr<subject>& _subject, std::unique_ptr<student>& _student, double value);
+    void deleteGrade(std::unique_ptr<subject>& _subject, std::unique_ptr<student>& _student);
+    grade getGrade(std::unique_ptr<subject>& _subject, std::unique_ptr<student>& _student);
 };

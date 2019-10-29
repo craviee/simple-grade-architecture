@@ -5,6 +5,7 @@
 
 #include <vector>
 #include <stdexcept>
+#include <memory>
 
 class student: public person {
 
@@ -16,6 +17,6 @@ public:
     std::vector<subject> subjects;
 
 public:
-    grade getGrade(subject _subject);
-    double getStatistics(subject _subject);
+    grade getGrade(std::unique_ptr<subject>& _subject);
+    double getStatistics(std::unique_ptr<subject>& _subject);
 };

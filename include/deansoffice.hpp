@@ -11,7 +11,7 @@ public:
     ~deansoffice();
 
 public:
-    void addStudent2Subject(subject _subject, student _student);
-    void addSubject2Professor(subject _subject, professor _professor);
-    void validateGrade(subject _subject, student _student);
+    void addStudent2Subject(std::unique_ptr<subject>& _subject, std::unique_ptr<student>& _student);
+    void addSubject2Professor(std::unique_ptr<subject>& _subject, std::unique_ptr<professor>& _professor);
+    void validateGrade(std::unique_ptr<subject>& _subject, std::unique_ptr<student>& _student);
 };

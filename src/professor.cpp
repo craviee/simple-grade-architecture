@@ -4,17 +4,17 @@ professor::professor(unsigned long _id, std::string _name, std::string _email, s
 
 professor::~professor() {}
 
-void professor::updateGrade(subject _subject, student _student, double value)
+void professor::updateGrade(std::unique_ptr<subject>& _subject, std::unique_ptr<student>& _student, double value)
 {
     bool found = false;
 
     if(isConnected)
     {
-        if(_subject.getProfessorId() == id)
+        if(_subject->getProfessorId() == id)
         {
-            for(grade g : _subject.grades)
+            for(grade& g : _subject->grades)
             {
-                if(g.studentId == _student.getId())
+                if(g.studentId == _student->getId())
                 {
                     g.value = value;
                     found = true;
@@ -31,15 +31,15 @@ void professor::updateGrade(subject _subject, student _student, double value)
         throw std::logic_error("Not connected");
 }
 
-void professor::deleteGrade(subject _subject, student _student)
+void professor::deleteGrade(std::unique_ptr<subject>& _subject, std::unique_ptr<student>& _student)
 {
     if(isConnected)
     {
-        if(_subject.getProfessorId() == id)
+        if(_subject->getProfessorId() == id)
         {
-            for(grade g : _subject.grades)
+            for(grade& g : _subject->grades)
             {
-                if(g.studentId == _student.getId())
+                if(g.studentId == _student->getId())
                 {
                     g.value = 0;
                     break;
