@@ -13,14 +13,14 @@ Architecture of a basic grade system.
 * gcc/g++
 * make
 
-## Instaling
+## Installation
 ```
 $ git clone https://github.com/craviee/simple-grade-architecture.git
 $ cd simple-grade-architecture
 $ make
 ```
 
-## Using
+## Usage
 ```
 $ cd bin/
 $ ./main.out
