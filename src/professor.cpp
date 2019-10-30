@@ -14,9 +14,9 @@ void professor::updateGrade(std::unique_ptr<subject>& _subject, std::unique_ptr<
         {
             for(grade& g : _subject->grades)
             {
-                if(g.studentId == _student->getId())
+                if(g.getStudentId() == _student->getId())
                 {
-                    g.value = value;
+                    g.setValue(value);
                     found = true;
                     break;
                 }
@@ -39,9 +39,9 @@ void professor::deleteGrade(std::unique_ptr<subject>& _subject, std::unique_ptr<
         {
             for(grade& g : _subject->grades)
             {
-                if(g.studentId == _student->getId())
+                if(g.getStudentId() == _student->getId())
                 {
-                    g.value = 0;
+                    g.setValue(0);
                     break;
                 }
             }

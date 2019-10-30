@@ -9,7 +9,7 @@ void deansoffice::addStudent2Subject(std::unique_ptr<subject>& _subject, std::un
 {
     if(isConnected)
     {
-        if(!std::any_of(_subject->grades.begin(), _subject->grades.end(), [&](grade g) { return g.studentId == _student->getId(); }))
+        if(!std::any_of(_subject->grades.begin(), _subject->grades.end(), [&](grade g) { return g.getStudentId() == _student->getId(); }))
             _subject->grades.push_back(_student->getId());
     }
     else
@@ -31,8 +31,8 @@ void deansoffice::validateGrade(std::unique_ptr<subject>& _subject, std::unique_
     if(isConnected)
     {
         for(grade& g : _subject->grades)
-            if(g.studentId == _student->getId())
-                g.validated = true;
+            if(g.getStudentId() == _student->getId())
+                g.setValidated(true);
     }
     else
         throw std::logic_error("Not connected");

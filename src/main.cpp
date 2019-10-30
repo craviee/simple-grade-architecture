@@ -30,8 +30,8 @@ int main()
     daniel->login();
     marcelo->login();
 
-    std::cout << "daniel's grade on sds: " << daniel->getGrade(sds).value << std::endl;
-    std::cout << "marcelo's grade on sds: " << marcelo->getGrade(sds).value << std::endl;
+    std::cout << "daniel's grade on sds: " << daniel->getGrade(sds).getValue() << std::endl;
+    std::cout << "marcelo's grade on sds: " << marcelo->getGrade(sds).getValue() << std::endl;
     std::cout << "mean grade of sds: " << daniel->getStatistics(sds) << std::endl;
 
     daniel->logout();
